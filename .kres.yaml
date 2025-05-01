@@ -1,3 +1,11 @@
+kind: auto.CI
+spec:
+  disableSlackWorkflow: true
+---
+king: common.GHWorkflow
+spec:
+  customRunners:
+    - self-hosted
 ---
 kind: pkgfile.Build
 spec:
@@ -70,6 +78,9 @@ spec:
       - nonfree-kmod-nvidia-lts-pkg
       - nonfree-kmod-nvidia-production-pkg
   reproducibleTargetName: reproducibility
+  imageNamePrefix: talos-
+  customRunners:
+    - self-hosted
 ---
 kind: auto.CustomSteps
 spec:

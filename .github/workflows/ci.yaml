@@ -1,6 +1,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.
 #
-# Generated on 2025-03-07T10:00:36Z by kres d88db2f.
+# Generated on 2025-05-01T21:59:31Z by kres 107ecdc.
 
 name: default
 concurrency:
@@ -27,7 +27,6 @@ jobs:
       pull-requests: read
     runs-on:
       - self-hosted
-      - pkgs
     if: (!startsWith(github.head_ref, 'renovate/') && !startsWith(github.head_ref, 'dependabot/'))
     outputs:
       labels: ${{ steps.retrieve-pr-labels.outputs.result }}
@@ -65,12 +64,6 @@ jobs:
       - name: Set up Docker Buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@v3
-        with:
-          append: |
-            - endpoint: tcp://buildkit-arm64.ci.svc.cluster.local:1234
-              platforms: linux/arm64
-          driver: remote
-          endpoint: tcp://buildkit-amd64.ci.svc.cluster.local:1234
       - name: Build
         if: github.event_name == 'pull_request'
         run: |
@@ -122,7 +115,6 @@ jobs:
   reproducibility:
     runs-on:
       - self-hosted
-      - pkgs
     if: contains(fromJSON(needs.default.outputs.labels), 'integration/reproducibility')
     needs:
       - default
@@ -160,12 +152,6 @@ jobs:
       - name: Set up Docker Buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@v3
-        with:
-          append: |
-            - endpoint: tcp://buildkit-arm64.ci.svc.cluster.local:1234
-              platforms: linux/arm64
-          driver: remote
-          endpoint: tcp://buildkit-amd64.ci.svc.cluster.local:1234
       - name: reproducibility-test
         run: |
           make reproducibility-test

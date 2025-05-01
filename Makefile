@@ -1,6 +1,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.
 #
-# Generated on 2025-04-11T11:47:10Z by kres d903dae.
+# Generated on 2025-05-01T21:59:31Z by kres 107ecdc.
 
 # common variables
 
@@ -13,8 +13,10 @@ IMAGE_TAG ?= $(TAG)
 OPERATING_SYSTEM := $(shell uname -s | tr '[:upper:]' '[:lower:]')
 GOARCH := $(shell uname -m | sed 's/x86_64/amd64/' | sed 's/aarch64/arm64/')
 REGISTRY ?= ghcr.io
-USERNAME ?= siderolabs
+USERNAME ?= hboyd2003
 REGISTRY_AND_USERNAME ?= $(REGISTRY)/$(USERNAME)
+IMAGE_NAME_PREFIX ?= talos-
+IMAGE_NAME_SUFFIX ?=
 KRES_IMAGE ?= ghcr.io/siderolabs/kres:latest
 CONFORMANCE_IMAGE ?= ghcr.io/siderolabs/conform:latest
 
@@ -190,7 +192,7 @@ nonfree: $(NONFREE_TARGETS)  ## Builds all nonfree targets defined.
 
 .PHONY: $(TARGETS) $(NONFREE_TARGETS)
 $(TARGETS) $(NONFREE_TARGETS):
-	@$(MAKE) docker-$@ TARGET_ARGS="--tag=$(REGISTRY_AND_USERNAME)/$@:$(TAG) --push=$(PUSH)"
+	@$(MAKE) docker-$@ TARGET_ARGS="--tag=$(REGISTRY_AND_USERNAME)/$(IMAGE_NAME_PREFIX)$@$(IMAGE_NAME_SUFFIX):$(TAG) --push=$(PUSH)"
 
 .PHONY: deps.png
 deps.png:  ## Generates a dependency graph of the Pkgfile.
