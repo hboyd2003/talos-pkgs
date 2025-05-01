@@ -3,9 +3,9 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_MUSL_IMAGE: ghcr.io/siderolabs/toolchain-musl:v0.14.0-alpha.0-9-g98c4d8a
+  TOOLCHAIN_MUSL_IMAGE: ghcr.io/siderolabs/toolchain-musl:v1.10.0
   TOOLS_PREFIX: ghcr.io/siderolabs/
-  TOOLS_REV: v1.10.0-alpha.0-24-g4f2036e
+  TOOLS_REV: v1.10.0
 
   # renovate: datasource=github-releases depName=containernetworking/plugins
   cni_version: v1.6.2
@@ -13,10 +13,10 @@ vars:
   cni_sha512: ee577e3fe39558d6a6296754c97de6608f95152805c01b8053e2958d16634ab57d147eea7c950fcc4d1a98d6733a85717adf7078ee2dffff007ec3b063386c24
 
   # renovate: datasource=github-tags depName=containerd/containerd
-  containerd_version: v2.0.4
-  containerd_ref: 1a43cb6a1035441f9aca8f5666a9b3ef9e70ab20
-  containerd_sha256: af0b18d125abf97fbe90d6d2cda53ffa0cd4cbb9e7d65fee61fc095bfb63cef5
-  containerd_sha512: f84e0cc0b82313df010b95989faf56e81ebfbbc321585b968c8c706917b91a9f0d895692fa5046f24f1c370de7a74b50daf83da617fe0595e5a8ff69ed658727
+  containerd_version: v2.0.5
+  containerd_ref: fb4c30d4ede3531652d86197bf3fc9515e5276d9
+  containerd_sha256: 617917606c64df1cab19a0f5cc20fd724ed9187314bcd40eaacf66a9e75b1eb8
+  containerd_sha512: af89a5c9ad5f931c5fee33c75c13c296fc9ec966f2c64ec244897695eebb365bcb542f6b431e60d4ef7213f0ea11d3a8896d1b7f033ed445e6b521b7ddbffe6f
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/cryptsetup/cryptsetup.git
   cryptsetup_version: 2.7.5
@@ -44,9 +44,9 @@ vars:
   ena_sha512: 25b254b274c5e2a987406298d438ed4e78e5b227d0ead53e1b42dfdc8efd1b6db27ee56ed45ed3bd269ee651277c2a04a6dec223413204cbe45a5fa94dffe8f5
 
   # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=systemd/systemd
-  systemd_version: 257.4
-  systemd_sha256: 3e7955ecdb8ad317b2876a31ad749e4dd71d371f343de40d856d62c1eb2ffa2a
-  systemd_sha512: dfa0f6de38fa30daffabf6b02d6533ca4e7027188186d7e2e9648b99dad5c4afa30773138f18a34111e7bb2e6ddae8302284429b98b580e757dc67535846afbe
+  systemd_version: 257.5
+  systemd_sha256: 4d65f9482608cf9f7823df42a6d7796f0e0dfcfb94301df75effff86d40da33e
+  systemd_sha512: 9e5352c20c9edac53f302a534532035185139998628ed0a85411f440df47f1dd7cce6651aec787484809bb1aa2825008d062714c37936cbfd08451fbe29a998f
 
   # renovate: datasource=github-releases depName=flannel-io/cni-plugin
   flannel_cni_version: v1.5.1-flannel3
@@ -85,9 +85,9 @@ vars:
   kspp_sha512: ac31ec1a4f88a46e2bd9c16e99991c0b96796c8c014ffc30e3535942a89db855243750b3c2b27fd9e7f90734c68b1d06deeb48684ee88dccdb7ec6360aba4371
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
-  linux_version: 6.12.21
-  linux_sha256: 9d1ae39a2ea024d99646f645fdbbbfa4545577132ba2643e01df75e32246d6c7
-  linux_sha512: 14436c71264c8679a1a9aada6b64d916a6ac5ff5f2128b344e844bea41780832b9bb5c74ee7d0970ee84b02feff433b1003303e129ff26deaba705aff3608b6f
+  linux_version: 6.12.25
+  linux_sha256: c8af780f6f613ca24622116e4c512a764335ab66e75c6643003c16e49a8e3b90
+  linux_sha512: 00a69a5d4d36cd845dc94b8b184cb0dd92af0fdadb4cacdc7592d54c272ab5dea11df5c0cbc4370bc4a8c63a427d772ea6a413c40f9e77ad97dd33ace8efc08c
 
   # renovate: datasource=git-tags extractVersion=^libaio-(?<version>.*)$ depName=https://pagure.io/libaio.git
   libaio_version: 0.3.113
@@ -100,9 +100,9 @@ vars:
   libattr_sha512: f587ea544effb7cfed63b3027bf14baba2c2dbe3a9b6c0c45fc559f7e8cb477b3e9a4a826eae30f929409468c50d11f3e7dc6d2500f41e1af8662a7e96a30ef3
 
   # renovate: datasource=github-releases extractVersion=^r(?<version>.*)$ depName=benhoyt/inih
-  libinih_version: 59
-  libinih_sha256: 062279922805f5e9a369551a08d5ddb506140fe50774183ffdbb7c22bb97e3f4
-  libinih_sha512: cd5ee8796c1be1ff7f589069ec90fee6fc4464ae7b2f0b39600ab08cf01cda9e4c006aa1cba0ee3c78df0111de5da23fa314816bfd327e34211a0dfcfa1d993b
+  libinih_version: 60
+  libinih_sha256: 706aa05c888b53bd170e5d8aa8f8a9d9ccf5449dfed262d5103d1f292af26774
+  libinih_sha512: b58ac2395ed8e2b3fa25c3c41260ac5c6ee445d5a6520a79a4392741b417c0ea5ede12d5d89b92f8c4a9c555ff41745ea4f18b78ccbe5117eaa4c723de03b50a
 
   # renovate: datasource=git-tags extractVersion=^release-(?<version>.*)$ depName=https://dev.lovelyhq.com/libburnia/libburn.git
   libburn_version: 1.5.6
@@ -156,9 +156,9 @@ vars:
   liburcu_sha512: 164d369cc1375b6b71eaa26812aff8a294bfbdffde65c2668e5c559d215d74c1973681f8083bfde39e280ca6fe8e92aadc7c867f966a5769548b754c92389616
 
   # renovate: datasource=git-tags depName=git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-  linux_firmware_version: 20250311
-  linux_firmware_sha256: 2a67a3fc91aea41679b8628909b0e47085e089163374f961a1ff94cd35a49ff7
-  linux_firmware_sha512: 2b1b1c7434c81d1a5cb79ce46ee09d6db95620a9df63250ebfaf1d6f10b1a3022b88bd2ccd9f4c2077a79e2ec20566020803b6a8bfdf0fc1ba490947129d21b7
+  linux_firmware_version: 20250410
+  linux_firmware_sha256: 0bbce01e3da4f22bc35d210e040c968484a24e3d7811b0625685e2e20badd588
+  linux_firmware_sha512: acbee11445b113fa386e2fb4581e036f8276ceaaab231b3cbea5a602c6638949199861f191894075e1c668c569a5412fa3482dd5e6947ec5ce009241e2ec0649
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://sourceware.org/git/lvm2.git
   lvm2_version: 2_03_31
@@ -196,9 +196,9 @@ vars:
   pigz_sha512: ae3d9d593e1645d65f9ab77aa828600c9af4bb30d0a073da7ae3dd805e65b87efaf6a0efb980f2d0168e475ae506eba194547d6479956dabb9d88293a9078a7f
 
   # renovate: datasource=git-tags depName=https://gitlab.gnome.org/GNOME/glib.git
-  glib_version: 2.84.0
-  glib_sha256: f8823600cb85425e2815cfad82ea20fdaa538482ab74e7293d58b3f64a5aff6a
-  glib_sha512: 72b85e30c535c5da7d8598d1cec02b1b481c467e612dbb396a0a64ad1d37cf2f1802c6fa576885c99cf8a22f4f0fc7dfdf42a3f32f7f40394f72db588fdbebb7
+  glib_version: 2.84.1
+  glib_sha256: 2b4bc2ec49611a5fc35f86aca855f2ed0196e69e53092bab6bb73396bf30789a
+  glib_sha512: ee7f38a4726fd72e41ddb75c4933c7b1bb30935bb2fddc84902d0627a836af512534195132cc02e3d15f168fefc816576181a8d6e436472b582191437b79a456
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://github.com/qemu/qemu.git
   qemu_version: 9.2.3
@@ -215,6 +215,11 @@ vars:
   socat_version: 1.8.0.3
   socat_sha256: a9f9eb6cfb9aa6b1b4b8fe260edbac3f2c743f294db1e362b932eb3feca37ba4
   socat_sha512: 600a3387e9756e0937d2db49de9066df03d9818e4042da6b72109d1b5688dd72352754773a19bd2558fe93ec6a8a73e80e7cf2602fd915960f66c403fd89beef
+
+  # renovate: datasource=git-refs versioning=git depName=https://github.com/awslabs/tc-redirect-tap.git
+  tc_redirect_tap_ref: b3c5abdd90fe9066aa75f429182688a51c1e9279
+  tc_redirect_tap_sha256: 98cadbfb0f8bc45df7a677b6ffad1a2465c55a45b396ac3d861b8515ee5bd737
+  tc_redirect_tap_sha512: 33cf7148a2324234999e2fe21d1e5ef6a5e6d713cca3eb6e7ca0ef4b8fb2ce6068e99c34b868a830fa29d925709e2aec064a12575998ef9df821b1fbf0b0b307
 
   # renovate: datasource=git-refs versioning=git depName=https://github.com/Xilinx/dma_ip_drivers.git
   xdma_driver_version: 03ac7f31e256c5604eeb970e98d343cf925ddb52
