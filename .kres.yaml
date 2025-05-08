@@ -1,8 +1,11 @@
 kind: auto.CI
 spec:
   disableSlackWorkflow: true
+  buildXOptions:
+    configure: false
+  defaultJobTimeoutMinutes: 1440
 ---
-king: common.GHWorkflow
+kind: common.GHWorkflow
 spec:
   customRunners:
     - self-hosted

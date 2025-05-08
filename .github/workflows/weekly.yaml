@@ -1,6 +1,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.
 #
-# Generated on 2025-05-01T21:59:31Z by kres 107ecdc.
+# Generated on 2025-05-08T11:12:23Z by kres fcc6f69.
 
 name: weekly
 concurrency:
@@ -44,9 +44,6 @@ jobs:
       - name: Unshallow
         run: |
           git fetch --prune --unshallow
-      - name: Set up Docker Buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@v3
       - name: reproducibility-test
         run: |
           make reproducibility-test
